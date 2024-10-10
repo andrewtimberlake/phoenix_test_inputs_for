@@ -38,7 +38,7 @@ defmodule PhoenixTestInputsForWeb.TestLive do
 
   def handle_event("validate", params, socket) do
     changeset = Model.changeset(%Model{}, params["model"])
-    IO.inspect(changeset, label: "changeset")
+
     {:noreply, assign(socket, :form, to_form(changeset))}
   end
 

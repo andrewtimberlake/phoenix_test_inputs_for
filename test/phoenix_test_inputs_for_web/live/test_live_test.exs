@@ -8,11 +8,11 @@ defmodule PhoenixTestInputsForWeb.TestLiveTest do
     |> visit("/test")
     |> assert_has("h1", text: "PhoenixTestInputsFor")
     |> check("add more")
-    |> fill_in("model[items][0][name]", with: "Item 1")
+    |> fill_in("[name='model[items][0][name]']", "Name", with: "Item 1")
     |> check("add more")
-    |> fill_in("model[items][1][name]", with: "Item 2")
+    |> fill_in("[name='model[items][1][name]']", "Name", with: "Item 2")
     |> check("add more")
-    |> fill_in("model[items][2][name]", with: "Item 3")
+    |> fill_in("[name='model[items][2][name]']", "Name", with: "Item 3")
     |> submit()
   end
 end
