@@ -57,9 +57,10 @@ defmodule PhoenixTestInputsForWeb.TestLive do
           <input type="hidden" name="model[items_sort][]" value={item.index} />
           <.input field={item[:name]} label="Name" />
         </.inputs_for>
-        <label>
-          <input type="checkbox" class="hidden" name="model[items_sort][]" value="new" /> add more
-        </label>
+        # from the example HTML at https://hexdocs.pm/phoenix_live_view/1.0.0-rc.6/Phoenix.Component.html#inputs_for/1-dynamically-adding-and-removing-inputs
+        <button type="button" name="model[items_sort][]" value="new" phx-click={JS.dispatch("change")}>
+          add more
+        </button>
         <.button>Submit</.button>
       </.form>
     </div>
